@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulario de Inicio de Sesión</title>
+  </head>
+  <body>
+    <h1>Formularios en HTML</h1>
+
+    <h2>Formulario GET www.itam.mx</h2>
+
+    <form action="https://www.itam.mx/es/1/paginas/resultados" target="_blank">
+      <label for="searchInput">Buscar en itam.mx:</label>
+      <input
+        type="text"
+        id="searchInput"
+        name="#"
+        placeholder="Término de búsqueda"
+        required
+      />
+      <button type="submit">Buscar</button>
+    </form>
+
+    <h2>Formulario POST para inicio de sesión en comunidad.itam.mx</h2>
+
+    <form
+      method="post"
+      id="loginForm"
+      target="_blank"
+      autocomplete="off"
+      novalidate
+      action="https://sts.itam.mx/adfs/ls?version=1.0&action=signin&realm=urn:AppProxy:com&appRealm=d2c44c54-cf77-eb11-80df-00155da51130&returnUrl=https://comunidad.itam.mx/&client-request-id=284B223B-05CF-0003-DC79-5F29CF05DC01"
+      onkeypress="if (event && event.keyCode == 13) Login.submitLoginRequest();"
+    >
+      <fieldset>
+        <legend>Inicio de sesión</legend>
+
+        <!-- Campo de correo electrónico -->
+        <label for="userNameInput">Correo electrónico:</label>
+        <input
+          type="email"
+          id="userNameInput"
+          name="UserName"
+          placeholder="alguien@example.com"
+          spellcheck="false"
+          autocomplete="off"
+          required
+        />
+
+        <!-- Campo de contraseña -->
+        <label for="passwordInput">Contraseña:</label>
+        <input
+          type="password"
+          id="passwordInput"
+          name="Password"
+          placeholder="Contraseña"
+          autocomplete="off"
+          required
+        />
+
+        <!-- Mantener sesión iniciada -->
+        <div id="kmsiArea" style="display: none">
+          <input
+            type="checkbox"
+            name="Kmsi"
+            id="kmsiInput"
+            value="true"
+          />
+          <label for="kmsiInput">Mantener la sesión iniciada</label>
+        </div>
+
+        <!-- Botón de envío -->
+        <button
+          type="submit"
+          id="submitButton"
+        >
+          Iniciar sesión
+        </button>
+      </fieldset>
+
+      <!-- Método de autenticación oculto -->
+      <input
+        type="hidden"
+        name="AuthMethod"
+        value="FormsAuthentication"
+        id="optionForms"
+      />
+    </form>
+  </body>
+</html>
