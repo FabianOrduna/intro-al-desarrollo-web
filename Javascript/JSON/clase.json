@@ -1,0 +1,14 @@
+{
+  "curso": "Introducción al Desarrollo Web",
+  "semestre": "Otoño 2025",
+  "universidad": "ITAM",
+  "horario": {
+    "inicio": "07:00",
+    "fin": "10:00",
+    "dia": "Viernes",
+    "salon": "CC 201"
+  },
+  "evaluaciones": {
+    "primer_parcial": "2025-10-03"
+  }
+}

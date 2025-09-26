@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mini Calculadora</title>
+    <!-- Bootstrap 5.3.8 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="calculos.js"></script>
+  </head>
+  <body class="bg-light">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card shadow-lg">
+            <div class="card-body">
+              <h1 class="text-center mb-4">Mini Calculadora</h1>
+
+              <form id="calcForm" onsubmit="return false;">
+                <div class="mb-3">
+                  <label for="num1" class="form-label">Número 1:</label>
+                  <input
+                    type="number"
+                    id="num1"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="num2" class="form-label">Número 2:</label>
+                  <input
+                    type="number"
+                    id="num2"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-between">
+                  <button
+                    class="btn btn-primary"
+                    onclick="calcular(event, 'sumar')"
+                  >
+                    ➕ Sumar
+                  </button>
+                  <button
+                    class="btn btn-danger"
+                    onclick="calcular(event, 'restar')"
+                  >
+                    ➖ Restar
+                  </button>
+                  <button
+                    class="btn btn-success"
+                    onclick="calcular(event, 'multiplicar')"
+                  >
+                    ✖️ Multiplicar
+                  </button>
+                  <button
+                    class="btn btn-warning"
+                    onclick="calcular(event, 'dividir')"
+                  >
+                    ➗ Dividir
+                  </button>
+                </div>
+              </form>
+
+              <h2 id="resultado" class="mt-4 text-center text-secondary">
+                Resultado:
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS (opcional, para componentes interactivos como modals, tooltips, etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

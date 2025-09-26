@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplo síncrono</title>
+    <script>
+      // Función bloqueante (simula un "sleep")
+      function delay(ms) {
+        const start = Date.now();
+        while (Date.now() - start < ms) {
+          // Bucle vacío (bloquea el navegador)
+        }
+      }
+
+      function ejecutar() {
+        console.log("Inicio de la tarea");
+
+        delay(3000); // Bloquea durante 3 segundos
+
+        console.log("Fin de la tarea");
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Ejemplo de llamada SÍNCRONA</h1>
+    <button onclick="ejecutar()">Ejecutar tarea</button>
+    <p>Abre la consola para ver los mensajes.</p>
+  </body>
+</html>

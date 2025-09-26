@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplo Bootstrap con imágenes</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container py-5">
+      <h1 class="text-center mb-4">Galería con Bootstrap</h1>
+
+      <!-- Botones -->
+      <div class="d-flex justify-content-center gap-3 mb-4">
+        <button
+          class="btn btn-primary"
+          onmouseover="mostrarImagen('playa')"
+          onmouseleave="limpiarImagen()"
+        >
+          Playa
+        </button>
+        <button
+          class="btn btn-success"
+          onclick="mostrarImagen('montaña')"
+          onmouseleave="limpiarImagen()"
+        >
+          Montaña
+        </button>
+        <button class="btn btn-warning" onclick="mostrarImagen('ciudad')">
+          Ciudad
+        </button>
+      </div>
+
+      <!-- Contenedor de imágenes -->
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <img
+            id="playa"
+            class="img-fluid rounded shadow d-none mb-3"
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+            alt="Playa de Unsplash"
+          />
+          <img
+            id="montaña"
+            class="img-fluid rounded shadow d-none mb-3"
+            src="https://plus.unsplash.com/premium_photo-1673240367277-e1d394465b56"
+            alt="Montaña de Unsplash"
+          />
+          <img
+            id="ciudad"
+            class="img-fluid rounded shadow d-none mb-3"
+            src="https://source.unsplash.com/800x500/?city"
+            alt="Fotografía de la Ciudad de México durante la noche mostrando Paseo de la Reforma y el Ángel de la Independencia"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

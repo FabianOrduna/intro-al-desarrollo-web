@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplo asíncrono</title>
+    <script>
+      function ejecutar() {
+        console.log("Inicio de la tarea");
+
+        // Asíncrono: programa sigue corriendo
+        setTimeout(() => {
+          console.log("Tarea terminada después de 3 segundos");
+        }, 3000);
+
+        console.log("Fin inmediato (no espera los 3 segundos)");
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Ejemplo de llamada ASÍNCRONA</h1>
+    <button onclick="ejecutar()">Ejecutar tarea</button>
+    <p>Abre la consola para ver el orden de los mensajes.</p>
+  </body>
+</html>
