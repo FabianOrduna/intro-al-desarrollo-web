@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Llamada con fetch</title>
+    <script>
+      function obtenerInformacion() {
+        console.log("Llamada a servidor");
+        const URL =
+          "https://fabianorduna.github.io/intro-al-desarrollo-web/Javascript/JSON/dia-muertos.json";
+
+        fetch(URL)
+          .then((response) => {
+            console.log("Respuesta recibida", { response });
+            return response.json();
+          })
+          .then((data) => {
+            // exito, ya tengo la información
+
+            //----------------------------------------------------
+            // obtener div y mostrarlo al eliminar la clase d-none
+            //----------------------------------------------------
+            document
+              .getElementById("contenido-muertos")
+              .classList.remove("d-none");
+
+            //----------------------------------------------------
+            // añadir contenido de la llamada a la API
+            //----------------------------------------------------
+            document.getElementById("elementos-muertos").innerHTML =
+              JSON.stringify(data);
+
+            console.log(data);
+          })
+          .catch(function (error) {
+            console.log("Error :(");
+          });
+
+        /*
+
+          */
+      }
+    </script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <button class="btn btn-primary" onclick="obtenerInformacion()">
+      Obten informacion
+    </button>
+
+    <div id="contenido-muertos" class="d-none">
+      <h1>Elementos clave del día de muertos</h1>
+      <div id="elementos-muertos">
+        <!-- Aquí se añadirá el contenido de la llamada a la API -->
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
