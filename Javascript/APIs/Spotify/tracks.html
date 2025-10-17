@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Spotify Track Info</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script src="track-profile.js" defer></script>
+  </head>
+  <body class="container mt-5">
+    <h1 class="h1 text-success">Spotify Artists Info</h1>
+    <div class="p-2 mt-3">
+      <div class="input-group mb-3">
+        <span class="input-group-text">Access token</span>
+        <input
+          class="form-control"
+          type="text"
+          id="token"
+          placeholder="Bearer token here"
+        />
+        <select class="form-select bg-success-subtle" id="track-id">
+          <option value="1PREzVLuDT6PSE9sej4wnV">Coqueta</option>
+          <option value="2lTm559tuIvatlT1u0JYG2">Baile inolvidable</option>
+          <option value="6De0lHrwBfPfrhorm9q1Xl">Me Rehúso</option>
+          <option value="3d0WouFnFmr0K3kjeza3fF">Hips don't like</option>
+        </select>
+        <button class="btn btn-success" id="fetch-btn">Get Track Info</button>
+      </div>
+    </div>
+
+    <section id="track-info"></section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
