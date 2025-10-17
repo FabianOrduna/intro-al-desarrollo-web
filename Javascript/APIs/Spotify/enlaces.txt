@@ -1,0 +1,15 @@
+Requisitos:
+1. Si ya tienes Spotify, inicia sesión en el siguiente enlace (o crea una cuenta):
+    https://developer.spotify.com/dashboard
+2. Crea una app en el enlace.
+3. Obten el id y el secret.
+
+Primera parte:
+1. Obten un access token:
+    https://developer.spotify.com/documentation/web-api/tutorials/getting-started
+2. Toma como referencia el enlace anterior y llama al endpoint para obtener el access token.
+
+Segunda parte:
+1. Busca en Spotify algún track que te guste. Por ejemplo: https://open.spotify.com/intl-es/track/2lTm559tuIvatlT1u0JYG2
+2. Una vez que lo tengas, explora la API de Spotify para hacer llamadas desde el cliente:
+    https://developer.spotify.com/documentation/web-api/reference/get-track
