@@ -1,0 +1,25 @@
+{
+  "titulo": "Día de Muertos",
+  "descripcion": "El Día de Muertos es una festividad mexicana que honra a los seres queridos fallecidos. Se celebra principalmente el 1 y 2 de noviembre, combinando tradiciones indígenas y católicas. Las familias construyen altares decorados con flores de cempasúchil, velas, comida, fotografías y objetos personales de los difuntos.",
+  "elementos_clave": [
+    "Altares u ofrendas",
+    "Flores de cempasúchil",
+    "Calaveras de azúcar",
+    "Pan de muerto",
+    "Catrinas",
+    "Velas y papel picado"
+  ],
+  "origen": {
+    "cultura": "Mesoamericana",
+    "fusion": "Tradiciones indígenas + Día de Todos los Santos (catolicismo)",
+    "reconocimiento": "Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO (2008)"
+  },
+  "fecha_celebracion": {
+    "inicio": "1 de noviembre",
+    "fin": "2 de noviembre"
+  },
+  "imagen": {
+    "descripcion": "Altar tradicional con flores de cempasúchil y ofrendas",
+    "url": "https://images.unsplash.com/photo-1698786038603-5c129b656bdf"
+  }
+}
