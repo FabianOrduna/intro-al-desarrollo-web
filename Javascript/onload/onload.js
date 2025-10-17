@@ -1,8 +1,12 @@
 window.onload = function () {
   console.log("Página cargada, esperando 3 segundos...");
 
-  setTimeout(() => {
+  const ejecuta = () => {
     document.getElementById("mensaje").textContent =
       "✅ Ejecutado tras 3 segundos de delay.";
-  }, 3000);
+  };
+
+  setTimeout(ejecuta, 3000);
+
+  console.log("Antes de los 3 segundos...");
 };
