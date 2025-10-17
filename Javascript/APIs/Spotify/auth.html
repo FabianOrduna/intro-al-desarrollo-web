@@ -12,8 +12,8 @@
       action="https://accounts.spotify.com/api/token"
       enctype="application/x-www-form-urlencoded"
     >
-      <input name="grant_type" value="client_credentials" />
-      <iput name="client_id" placeholder="Ingresa tu Client ID" />
+      <input hidden name="grant_type" value="client_credentials" />
+      <input name="client_id" placeholder="Ingresa tu Client ID" />
       <input name="client_secret" placeholder="Ingresa tu Secret" />
       <button type="submit">Solicitar Token de Acceso</button>
     </form>
