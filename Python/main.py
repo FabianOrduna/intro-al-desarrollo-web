@@ -1,4 +1,9 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
+
+class DataItem(BaseModel):
+    clave: str
+    nombre: str
 
 app = FastAPI()
 
@@ -59,3 +64,24 @@ def new_data(clave, nombre):
     elemento = {"clave":clave, "nombre":{nombre}}
     DBMemory.append(elemento)
     return {"message": "Data added successfully", "data": elemento}
+
+# ------------------------------------ POST con Body ------------------------------------
+# FORMA REQUERIDA
+@app.post("/data")
+def new_data(item: DataItem):
+    elemento = {"clave": item.clave, "nombre": item.nombre}
+    DBMemory.append(elemento)
+    return {"message": "Data added successfully", "data": elemento}
+
+""" Llamada desde Javascript
+fetch("http://127.0.0.1:8000/data", 
+    {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body:JSON.stringify({clave:"567",nombre:"Farah"})
+    })
+    .then(response=>response.json())
+    .then(data=>console.log(data))
+"""
