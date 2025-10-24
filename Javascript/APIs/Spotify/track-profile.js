@@ -47,18 +47,49 @@ function addAlbumResponse(container, data) {
   container.appendChild(card);
 }
 
-//-------------------------------------------------------------------------------
-// Purpose: Fetch and display Spotify track information using Spotify Web API
-document.getElementById("fetch-btn").addEventListener("click", async () => {
-  const token = document.getElementById("token").value.trim();
+function addHTMLAlbumResponse(container, data) {
+  const outputHTML = `<div class="card mb-3 bg-success" style="max-width: 540px">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            src="${data.album.images[0]?.url || ""}"
+            alt="Album cover for ${data.album.name}"
+            class="img-fluid rounded-start"
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">${data.name}</h5>
+            <p class="card-text">
+              <strong>Artist:</strong> ${data.artists
+                .map((a) => a.name)
+                .join(", ")}
+            </p>
+            <p class="card-text"><strong>Album:</strong> ${data.album.name}</p>
+            <p class="card-text">
+              <small class="text-muted"
+                ><strong>Release Date:</strong> ${
+                  data.album.release_date
+                }</small
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  container.innerHTML = outputHTML;
+}
+
+async function ejecutaFuncion() {
+  const token = document.getElementById("token").value.trim(); // ABC
   const trackId = document.getElementById("track-id").value.trim();
 
   const container = document.getElementById("track-info");
-  container.innerHTML = "";
+  container.innerHTML = "<p>Hola</p><p>Mundo</p>";
 
-  const loading = document.createElement("p");
-  loading.textContent = "Loading...";
-  container.appendChild(loading);
+  const parrafo = document.createElement("p");
+  parrafo.textContent = "Loading...";
+  container.appendChild(parrafo);
 
   try {
     const response = await fetch(
@@ -74,7 +105,8 @@ document.getElementById("fetch-btn").addEventListener("click", async () => {
 
     const data = await response.json();
     container.innerHTML = ""; // Clear loading
-    addAlbumResponse(container, data);
+    // addAlbumResponse(container, data); -> modificando el DOM
+    addHTMLAlbumResponse(container, data); // -> usando innerHTML
   } catch (err) {
     container.innerHTML = "";
     const error = document.createElement("p");
@@ -82,4 +114,8 @@ document.getElementById("fetch-btn").addEventListener("click", async () => {
     error.style.color = "red";
     container.appendChild(error);
   }
-});
+}
+
+//-------------------------------------------------------------------------------
+// Purpose: Fetch and display Spotify track information using Spotify Web API
+document.getElementById("fetch-btn").addEventListener("click", ejecutaFuncion);
