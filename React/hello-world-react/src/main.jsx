@@ -1,10 +1,12 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App.jsx";
+import List from "./components/TodoList/List";
+import ContadorConUseState from "./components/Contador/ContadorConUseState";
+// import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <ContadorConUseState />
   </StrictMode>
 );
