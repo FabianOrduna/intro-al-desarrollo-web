@@ -1,0 +1,137 @@
+CREATE TABLE persona (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    apellido_paterno VARCHAR(100) NOT NULL,
+    apellido_materno VARCHAR(100),
+    fecha_nacimiento DATE NOT NULL,
+    fecha_de_registro TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+
+INSERT INTO persona (nombre, apellido_paterno, apellido_materno, fecha_nacimiento)
+VALUES ('Albert', 'Einstein', NULL, '1879-03-14');
+
+INSERT INTO persona (nombre, apellido_paterno, apellido_materno, fecha_nacimiento)
+VALUES ('Marie', 'Curie', NULL, '1867-11-07');
+
+INSERT INTO persona (nombre, apellido_paterno, apellido_materno, fecha_nacimiento)
+VALUES ('Leonardo', 'da Vinci', NULL, '1452-04-15');
+
+INSERT INTO persona (nombre, apellido_paterno, apellido_materno, fecha_nacimiento)
+VALUES ('Frida', 'Kahlo', NULL, '1907-07-06');
+
+INSERT INTO persona (nombre, apellido_paterno, apellido_materno, fecha_nacimiento)
+VALUES ('Gabriel', 'García', 'Márquez', '1927-03-06');
+
+INSERT INTO persona (nombre, apellido_paterno, apellido_materno, fecha_nacimiento)
+VALUES ('Nelson', 'Mandela', NULL, '1918-07-18');
+
+INSERT INTO persona (nombre, apellido_paterno, apellido_materno, fecha_nacimiento)
+VALUES ('Ada', 'Lovelace', NULL, '1815-12-10');
+
+INSERT INTO persona (nombre, apellido_paterno, apellido_materno, fecha_nacimiento)
+VALUES ('Pablo', 'Picasso', NULL, '1881-10-25');
+
+INSERT INTO persona (nombre, apellido_paterno, apellido_materno, fecha_nacimiento)
+VALUES ('Octavio', 'Paz', NULL, '1914-03-31');
+
+INSERT INTO persona (nombre, apellido_paterno, apellido_materno, fecha_nacimiento)
+VALUES ('Malala', 'Yousafzai', NULL, '1997-07-12');
+
+
+
+
+
+
+CREATE TABLE curiosidad (
+    id SERIAL PRIMARY KEY,
+    persona_id INT NOT NULL,
+    descripcion TEXT NOT NULL,
+    FOREIGN KEY (persona_id) REFERENCES persona (id)
+);
+
+
+
+-- Albert Einstein (id=1)
+INSERT INTO curiosidad (persona_id, descripcion) VALUES
+(1, 'Le gustaba tocar el violín'),
+(1, 'Ganó el Premio Nobel de Física en 1921'),
+(1, 'Trabajó en la Oficina de Patentes en Suiza'),
+(1, 'Rechazó la presidencia de Israel en 1952'),
+(1, 'Su teoría de la relatividad revolucionó la física moderna');
+
+-- Marie Curie (id=2)
+INSERT INTO curiosidad (persona_id, descripcion) VALUES
+(2, 'Fue la primera persona en ganar dos Premios Nobel'),
+(2, 'Descubrió el radio y el polonio'),
+(2, 'Fundó el Instituto Curie en París'),
+(2, 'Fue la primera mujer profesora en la Universidad de París'),
+(2, 'Murió por exposición prolongada a la radiación');
+
+-- Leonardo da Vinci (id=3)
+INSERT INTO curiosidad (persona_id, descripcion) VALUES
+(3, 'Era ambidiestro y escribía al revés'),
+(3, 'Diseñó máquinas voladoras siglos antes de la aviación'),
+(3, 'Pintó la Mona Lisa y La Última Cena'),
+(3, 'Estudiaba anatomía diseccionando cadáveres'),
+(3, 'Dejó numerosos cuadernos con inventos y bocetos');
+
+-- Frida Kahlo (id=4)
+INSERT INTO curiosidad (persona_id, descripcion) VALUES
+(4, 'Sufrió un grave accidente de autobús a los 18 años'),
+(4, 'Se casó con Diego Rivera en 1929'),
+(4, 'Su Casa Azul en Coyoacán es hoy un museo'),
+(4, 'Pintaba autorretratos con fuerte carga simbólica'),
+(4, 'Es considerada un ícono del feminismo y el arte mexicano');
+
+-- Gabriel García Márquez (id=5)
+INSERT INTO curiosidad (persona_id, descripcion) VALUES
+(5, 'Ganó el Premio Nobel de Literatura en 1982'),
+(5, 'Su obra más famosa es "Cien años de soledad"'),
+(5, 'Fue periodista además de novelista'),
+(5, 'Era amigo cercano de Fidel Castro'),
+(5, 'Popularizó el realismo mágico en la literatura');
+
+-- Nelson Mandela (id=6)
+INSERT INTO curiosidad (persona_id, descripcion) VALUES
+(6, 'Pasó 27 años en prisión'),
+(6, 'Fue el primer presidente negro de Sudáfrica'),
+(6, 'Ganó el Premio Nobel de la Paz en 1993'),
+(6, 'Promovió la reconciliación tras el apartheid'),
+(6, 'Su clan lo llamaba "Madiba" como muestra de respeto');
+
+-- Ada Lovelace (id=7)
+INSERT INTO curiosidad (persona_id, descripcion) VALUES
+(7, 'Es considerada la primera programadora de la historia'),
+(7, 'Trabajó con Charles Babbage en la máquina analítica'),
+(7, 'Previó que las computadoras podían ir más allá de cálculos'),
+(7, 'Era hija del poeta Lord Byron'),
+(7, 'Su trabajo fue redescubierto en el siglo XX');
+
+-- Pablo Picasso (id=8)
+INSERT INTO curiosidad (persona_id, descripcion) VALUES
+(8, 'Fundó el movimiento cubista'),
+(8, 'Pintó el famoso mural "Guernica"'),
+(8, 'Produjo más de 20,000 obras a lo largo de su vida'),
+(8, 'Vivió gran parte de su vida en Francia'),
+(8, 'Su nombre completo tiene más de 15 palabras');
+
+-- Octavio Paz (id=9)
+INSERT INTO curiosidad (persona_id, descripcion) VALUES
+(9, 'Ganó el Premio Nobel de Literatura en 1990'),
+(9, 'Escribió "El laberinto de la soledad"'),
+(9, 'Fue embajador de México en India'),
+(9, 'Fundó la revista "Plural"'),
+(9, 'Defendió la libertad de expresión en sus ensayos');
+
+-- Malala Yousafzai (id=10)
+INSERT INTO curiosidad (persona_id, descripcion) VALUES
+(10, 'Sobrevivió a un atentado talibán en 2012'),
+(10, 'Ganó el Premio Nobel de la Paz en 2014'),
+(10, 'Defiende el derecho de las niñas a la educación'),
+(10, 'Fundó el Fondo Malala para apoyar proyectos educativos'),
+(10, 'Es la persona más joven en recibir un Nobel de la Paz');
+
+
+
+SELECT persona.id, persona.nombre, persona.apellido_paterno, curiosidad.descripcion FROM persona INNER JOIN curiosidad ON persona.id = curiosidad.persona_id;
